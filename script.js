@@ -8,17 +8,20 @@ searchCountry.addEventListener("input", function (event) {
     .then((r) => {
         
       container.innerHTML = "";
-      r.forEach(({ name, flag }) => {
+      r.forEach(({ name,flag, region }) => {
         const div = document.createElement("div");
         const li = document.createElement("li");
-        
+        const p = document.createElement('p');
+        p.textContent = "Region :" + region; 
+        // console.log(p.textContent);
         li.className = "list";
         li.textContent = name;
-        console.log(name);
+    
         const img = document.createElement("img");
         img.setAttribute("src", flag);
         div.append(li);
         div.append(img);
+        div.append(p)
   
 
         container.appendChild(div);
@@ -29,13 +32,13 @@ searchCountry.addEventListener("input", function (event) {
 fetch("https://restcountries.eu/rest/v2/all")
   .then((response) => response.json())
   .then((countries) => {
-      console.log(countries[0].region);
+      console.log(countries);
     countries.forEach(({ name, flag }) => {
       const div = document.createElement("div");
       const li = document.createElement("li");
       li.className = "list";
       li.textContent = name;
-      console.log(name);
+    //   console.log(name);
       const img = document.createElement("img");
       img.setAttribute("src", flag);
       div.append(li);
