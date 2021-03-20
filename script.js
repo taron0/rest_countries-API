@@ -6,39 +6,36 @@ searchCountry.addEventListener("input", function (event) {
   fetch(`https://restcountries.eu/rest/v2/name/${searchValue}`)
     .then((ressponse) => ressponse.json())
     .then((r) => {
-        
       container.innerHTML = "";
-      r.forEach(({ name,flag, region }) => {
+      r.forEach(({ name, flag, region }) => {
         const div = document.createElement("div");
         const li = document.createElement("li");
-        const p = document.createElement('p');
-        p.textContent = "Region :" + region; 
-        // console.log(p.textContent);
+        const p = document.createElement("p");
+        p.textContent = "Region :" + region;
         li.className = "list";
         li.textContent = name;
-    
+
         const img = document.createElement("img");
         img.setAttribute("src", flag);
         div.append(li);
         div.append(img);
-        div.append(p)
-  
+        div.append(p);
 
         container.appendChild(div);
-       console.log(r) 
+        console.log(r);
       });
     });
 });
 fetch("https://restcountries.eu/rest/v2/all")
   .then((response) => response.json())
   .then((countries) => {
-      console.log(countries);
+    console.log(countries);
     countries.forEach(({ name, flag }) => {
       const div = document.createElement("div");
       const li = document.createElement("li");
       li.className = "list";
       li.textContent = name;
-    //   console.log(name);
+      //   console.log(name);
       const img = document.createElement("img");
       img.setAttribute("src", flag);
       div.append(li);
@@ -48,4 +45,3 @@ fetch("https://restcountries.eu/rest/v2/all")
     });
   })
   .catch((err) => console.log(err));
-
