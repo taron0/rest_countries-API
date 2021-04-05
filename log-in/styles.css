@@ -1,0 +1,76 @@
+body {
+    background: #506163;
+  }
+  .container {
+    width: 400px;
+    text-align: center;
+    border: 2px solid brown;
+    border-radius: 5px;
+    background: #d0ff00;
+    margin: 0 auto;
+    margin-top: 26px;
+  }
+  
+  .submit-text {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 22px;
+    font-style: oblique;
+    background-color: teal;
+    border: 1px solid teal;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  .phone,
+  .email {
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  #error-phone,
+  #error-email {
+    color: red;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 20px;
+    display: none;
+  }
+  
+  .btn-submit {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .btn-submit:hover {
+    background: #4bfff0;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    color: #28bccc;
+    font-size: 25px;
+    font-weight: bold;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.514);
+    z-index: 1000;
+  }
+  .modal .modal_content {
+    background-color: #d6eb1e;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    z-index: 99999;
+  }
