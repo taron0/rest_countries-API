@@ -41,13 +41,10 @@ btnSubmit.addEventListener("click", function () {
   const isDisplayPhone = errorMessagePhone.style.display === "none";
   const isDisplayEmaile = errorMessageEmail.style.display === "none";
   if (isDisplayEmaile && isDisplayPhone) {
-    form.setAttribute("action", "./rest-countries/index.htmlgit ");
+    form.setAttribute("action", "./rest-countries/index.html ");
     form.setAttribute("target", "_blank");
+    localStorage.setItem('phone',phoneInput.value);
+    localStorage.setItem('email',emailInput.value);
   }
 });
 
-window.onclick = function (event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-};
